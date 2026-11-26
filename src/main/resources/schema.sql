@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS lancamento (
+    id UUID PRIMARY KEY,
+    descricao VARCHAR(120) NOT NULL,
+    categoria VARCHAR(40) NOT NULL,
+    valor DECIMAL(11, 2) NOT NULL CHECK (valor > 0),
+    confirmado BOOLEAN NOT NULL,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
